@@ -1,6 +1,6 @@
 # 🛡️ Gallipoli AI Sec: Prompt Injection Laboratuvarı
 
-[![GitHub License](https://img.shields.io/github/license/hilalavsar/PROMPT-INJECTION-LABI)](LICENSE)
+**Topluluk Adresi:** [gallipoli.xyz](https://gallipoli.xyz/)
 [![GitHub last commit](https://img.shields.io/github/last-commit/hilalavsar/PROMPT-INJECTION-LABI)](https://github.com/hilalavsar/PROMPT-INJECTION-LABI/commits/main)
 
 Bu depo, **Gallipoli Topluluğu AI Sec** kanalı için özel olarak geliştirilmiş, interaktif bir Prompt Injection (PI) test ve öğrenme ortamıdır. Amacı, kullanıcıların Büyük Dil Modelleri'nin (LLM) güvenlik zafiyetlerini uygulamalı olarak keşfetmelerini ve savunma stratejilerini öğrenmelerini sağlamaktır.
