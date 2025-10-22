@@ -39,7 +39,7 @@ Bu Lab'ı kullanmanın en kolay yolu, kurulum gerektirmeyen Google Colab üzerin
 
 Aşağıdaki bağlantıya tıklayarak laboratuvar ortamını doğrudan Colab'da açın:
 
-[🔗 **PROMPT INJECTION LAB'I (Colab Linki)**](LÜTFEN_COLAB_LINKINI_BURAYA_EKLEYIN)
+[🔗 **PROMPT INJECTION LAB'I (Colab Linki)**](https://colab.research.google.com/drive/1WpqQz2C-9kGa-O3a7696mgQjI2WqKPBM?usp=sharing)
 
 ### 2. Ön Gereksinimler
 
@@ -62,8 +62,5 @@ Bu proje açık kaynaklıdır ve Gallipoli AI Sec topluluğunun katkılarına a�
 
 Lütfen herhangi bir hata bulursanız veya bir iyileştirme öneriniz olursa bir **Issue** açın veya **Pull Request** gönderin.
 
-## 📝 Lisans
-
-Bu proje MIT Lisansı altında lisanslanmıştır. Daha fazla detay için [LICENSE](LICENSE) dosyasına bakın.
-
+Bana ulaşmak isterseniz telegramdan yazabilirsiniz : @sadece_birisi
 ---
