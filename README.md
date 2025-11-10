@@ -1,12 +1,7 @@
-# 🛡️ Gallipoli AI Sec: Prompt Injection Laboratuvarı
+# 🛡️ Prompt Injection Laboratuvarı
 
-<p align="center">
-  <a href="https://gallipoli.xyz/">
-    <img src="https://gallipoli.xyz/assets/GallipoliLogo.png" alt="Gallipoli Topluluğu Logo" width="150" />
-  </a>
-</p>
 
-Bu depo, **Gallipoli Topluluğu AI Sec** kanalı için özel olarak geliştirilmiş, interaktif bir Prompt Injection (PI) test ve öğrenme ortamıdır. Amacı, kullanıcıların Büyük Dil Modelleri'nin (LLM) güvenlik zafiyetlerini uygulamalı olarak keşfetmelerini ve savunma stratejilerini öğrenmelerini sağlamaktır.
+Bu repo interaktif bir Prompt Injection (PI) test ve öğrenme ortamıdır. Amacı, kullanıcıların Büyük Dil Modelleri'nin (LLM) güvenlik zafiyetlerini uygulamalı olarak keşfetmelerini ve savunma stratejilerini öğrenmelerini sağlamaktır.
 
 ## 🎯 Proje Hakkında
 
@@ -16,7 +11,7 @@ Kullanıcılar, bir seviye seçer ve hedef (gizli anahtarı sızdırmak) için p
 
 ### Gizli Hedef
 
-* **Gizli Anahtar:** `GLLP-SEC-KEY-12345`
+* **Gizli Anahtar:** `SECRET-KEY-12345`
 * **Amaç:** LLM'e, bu anahtarı herhangi bir prompt injection tekniği kullanarak söyletmek.
 
 ## ⚙️ Nasıl Çalışır? (5 Kademeli Savunma Sistemi)
