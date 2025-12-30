@@ -17,7 +17,7 @@ Bu proje, **Büyük Dil Modellerinin (LLM)** güvenliğini test etmek ve Türkç
 * **Teknik:** LoRA Rank değeri 32'ye çıkarıldı ve modelin daha fazla katmanı (`all-linear`) eğitime dahil edildi.
 * **Gözlem:** Güvenlik bariyerleri güçlendi ancak modelin "doğal konuşma" yeteneği savunma refleksinin gerisinde kaldı.
 
-### **Faz 3: Şampiyonlar Ligi - Zeka ve Dil Entegrasyonu (Güncel Durum)**
+### **Faz 3: Zeka ve Dil Entegrasyonu (DEVAM EDİYOR)**
 
 * **Hedef:** Dil bariyerini tamamen ortadan kaldırıp, zeki ve akıcı bir **"Siber Güvenlik Muhafızı"** inşa etmek.
 * **Uygulama:** * **Model Değişimi:** 3.8B'lik modelden, çok daha zeki olan **Llama-3.1-8B-Instruct** modeline geçildi.
@@ -26,7 +26,7 @@ Bu proje, **Büyük Dil Modellerinin (LLM)** güvenliğini test etmek ve Türkç
 
 * **Sonuç:** 100 adımlık eğitim sonucunda **0.95 Training Loss** değerine ulaşılarak, modelin hem mükemmel Türkçe konuşması hem de karmaşık saldırıları (Roleplay, Base64 vb.) anlaması sağlandı.
 * **Kayıt:** Zeka kaybını önlemek için model **Q8_0 (8-bit)** hassasiyetinde GGUF formatında nicemlendi.
-
+  
 ---
 
 ## 🎯 Gelecek Hedefleri (Faz 4: PI-LAB Arayüzü)
