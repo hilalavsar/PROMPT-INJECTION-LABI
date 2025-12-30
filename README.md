@@ -26,7 +26,7 @@ Bu proje, **Büyük Dil Modellerinin (LLM)** güvenliğini test etmek ve Türkç
 * **Sorun:** Kısıtlı veri nedeniyle modelin Türkçesinde bozulmalar saptandı.
 * **Çözüm:** Veri seti hibrit hale getirilerek 4.300 örneğe çıkarıldı.
 
-### 🏆 Faz 3: Şampiyonlar Ligi (Güncel Durum)
+### 🏆 Faz 3: Zeka ve Dil Entegrasyonu (DEVAM EDİYOR)
 > **Zeka ve Dilin Kusursuz Uyumu**
 
 - **Yeni Mimari:** 8B parametreli **Llama-3.1** modeline geçiş yapıldı.
