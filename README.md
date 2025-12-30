@@ -1,61 +1,54 @@
-# 🛡️ Prompt Injection Laboratuvarı
+🛡️ Prompt Injection Analiz Laboratuvarı (PI-LAB)
+Bu proje, Büyük Dil Modellerinin (LLM) güvenliğini test etmek ve Türkçe dil yapısına uygun "Prompt Injection" (Komut Enjeksiyonu) saldırılarına karşı dirençli bir "Siber Muhafız" modeli geliştirmek amacıyla tasarlanmıştır.
 
+🚀 Proje Gelişim Süreci
+Faz 1: Prototip ve Model Seçimi
+Hedef: Temel bir siber güvenlik filtresi oluşturmak.
 
-Bu repo interaktif bir Prompt Injection (PI) test ve öğrenme ortamıdır. Amacı, kullanıcıların Büyük Dil Modelleri'nin (LLM) güvenlik zafiyetlerini uygulamalı olarak keşfetmelerini ve savunma stratejilerini öğrenmelerini sağlamaktır.
+Uygulama: Phi-3-mini-4k-instruct (3.8B) modeli, temel siber güvenlik saldırı veri setleriyle eğitildi.
 
-## 🎯 Proje Hakkında
+Gözlem: Modelin siber güvenlik farkındalığı oluştu ancak kısıtlı Türkçe veri nedeniyle dil bilgisi bozulmaları (hallucination) saptandı.
 
-Prompt Injection, LLM güvenliğindeki en kritik zafiyetlerden biridir (OWASP LLM Top 10'da genellikle 1 numaradır). Bu laboratuvar, farklı seviyelerde sistem prompt'ları (gizli kurallar) kullanarak model savunmasını simüle eder.
+Faz 2: Veri Kümesi Genişletme ve Optimizasyon
+Hedef: Modelin saldırı tanıma kapasitesini ve Türkçe cevap yeteneğini artırmak.
 
-Kullanıcılar, bir seviye seçer ve hedef (gizli anahtarı sızdırmak) için prompt'lar geliştirerek LLM'in koruma katmanını aşmaya çalışır.
+Uygulama: Yaklaşık 4.300 örneklik karma (Türkçe/İngilizce) bir veri seti (v2_full_master_dataset.jsonl) oluşturuldu.
 
-### Gizli Hedef
+Teknik: LoRA Rank değeri 32'ye çıkarıldı ve modelin daha fazla katmanı (all-linear) eğitime dahil edildi.
 
-* **Gizli Anahtar:** `SECRET-KEY-12345`
-* **Amaç:** LLM'e, bu anahtarı herhangi bir prompt injection tekniği kullanarak söyletmek.
+Gözlem: Güvenlik bariyerleri güçlendi ancak modelin "doğal konuşma" yeteneği savunma refleksinin gerisinde kaldı.
 
-## ⚙️ Nasıl Çalışır? (5 Kademeli Savunma Sistemi)
+Faz 3: Şampiyonlar Ligi - Zeka ve Dil Entegrasyonu (Güncel Durum)
+Hedef: Dil bariyerini tamamen ortadan kaldırıp, zeki ve akıcı bir "Siber Güvenlik Muhafızı" inşa etmek.
 
-Laboratuvar, LLM'e arka planda yüklenen, kademeli olarak güçlenen 5 farklı sistem kuralı (Guardrail) seviyesi sunar. Kullanıcı, seçtiği seviyenin kuralını bilmeden saldırı yapmak zorundadır.
+Uygulama: * Model Değişimi: 3.8B'lik modelden, çok daha zeki olan Llama-3.1-8B-Instruct modeline geçildi.
 
-| Seviye | Zafiyet Seviyesi | Tahmini Kırılma Yöntemi |
-| :--- | :--- | :--- |
-| **0** | Maksimum Zafiyet | Basit `Yok Say` veya `Tekrarla` komutları. |
-| **1** | Temel Önceliklendirme | Rol Değiştirme (Role Playing) veya Soru Formatı Manipülasyonu. |
-| **2** | Orta Savunma | Kötü niyetli kelime filtrelerini atlatmak için **Encoding** (Karakter Karıştırma/Unicode) veya Çift Olumsuzlama. |
-| **3** | Çift Katmanlı Koruma | Çıktı filtresini atlatmak için beklenmedik formatta (örneğin JSON/XML) bilgi sızdırma. |
-| **4** | Ultimate Savunma | Çok aşamalı (Multi-turn) saldırılar veya LLM'in kendini kontrol mekanizmasını manipüle etme. |
+Hibrit Veri Seti: Alican Kiraz'ın yüksek kaliteli Türkçe SFT veri seti ile siber güvenlik veri setleri harmanlanarak 6.000+ örneklik yeni bir küme oluşturuldu.
 
-## 🚀 Hızlı Başlangıç
+Sonuç: 100 adımlık eğitim sonucunda 0.95 Training Loss değerine ulaşılarak, modelin hem mükemmel Türkçe konuşması hem de karmaşık saldırıları (Roleplay, Base64 vb.) anlaması sağlandı.
 
-Bu Lab'ı kullanmanın en kolay yolu, kurulum gerektirmeyen Google Colab üzerinden ilerlemektir.
+Kayıt: Zeka kaybını önlemek için model Q8_0 (8-bit) hassasiyetinde GGUF formatına dönüştürüldü.
 
-### 1. Colab Not Defterini Açın
+🎯 Gelecek Hedefleri (Faz 4: PI-LAB Arayüzü)
+Projenin bir sonraki adımı, eğitilen bu "Siber Muhafız"ı siber güvenlik araştırmacılarının kullanımına sunmaktır:
 
-Aşağıdaki bağlantıya tıklayarak laboratuvar ortamını doğrudan Colab'da açın:
+Gamification (Oyunlaştırma): Gandalf (Lakera) tarzı, seviye bazlı bir Prompt Injection oyunu tasarlamak.
 
-[🔗 **PROMPT INJECTION LAB'I (Colab Linki)**](https://colab.research.google.com/drive/1WpqQz2C-9kGa-O3a7696mgQjI2WqKPBM?usp=sharing)
+Web Arayüzü: Gradio veya Streamlit kütüphaneleri kullanılarak tıklanabilir, kullanıcı dostu bir test platformu oluşturmak.
 
-### 2. Ön Gereksinimler
+Hugging Face Dağıtımı: Geliştirilen modelin ve arayüzün "Hugging Face Spaces" üzerinden dünyaya açılması.
 
-* **Gemini API Anahtarı:** Kendi [Google AI Studio] (https://ai.google.dev/) hesabınızdan ücretsiz bir API anahtarı alın.
-* **Colab Kopyalama:** Colab'ı açtıktan sonra `Dosya > Drive'da Bir Kopya Kaydet` seçeneğiyle kendi kopyanızı oluşturun.
+Seviye Tasarımları: * Seviye 1: Basit kandırma.
 
-### 3. Anahtarı Ayarlama ve Çalıştırma
+Seviye 3: Karakter taklidi ve rol yapma saldırıları.
 
-1.  Not defterindeki kodda bulunan `GEMINI_API_KEY = "..."` satırına kendi API anahtarınızı yapıştırın.
-2.  `Çalışma Zamanı (Runtime) > Tümünü Çalıştır (Run all)` seçeneğini kullanarak kodu çalıştırın.
-3.  Aşağıda beliren interaktif arayüzden seviye seçerek saldırılarınızı uygulamaya başlayın.
+Seviye 5: Gelişmiş kodlanmış (encoded) saldırı vektörleri.
 
-## 🤝 Katkıda Bulunma
+🛠️ Kullanılan Teknolojiler
+Model: Llama-3.1-8B-Instruct
 
-Bu proje açık kaynaklıdır ve Gallipoli AI Sec topluluğunun katkılarına açıktır.
+Kütüphaneler: Unsloth, LoRA, Transformers, TRL, Datasets
 
-* Yeni ve daha zorlu PI saldırı prompt'ları eklemek.
-* Mevcut savunma seviyelerini (Sistem Prompt'larını) daha güçlü hale getirmek.
-* Kodu Streamlit gibi kalıcı bir web arayüzüne taşımak.
+Donanım: Google Colab Pro (L4 / A100 GPU)
 
-Lütfen herhangi bir hata bulursanız veya bir iyileştirme öneriniz olursa bir **Issue** açın veya **Pull Request** gönderin.
-
-Bana ulaşmak isterseniz telegramdan yazabilirsiniz : @sadece_birisi
----
+Geliştiren: Hilal Kavas
