@@ -33,7 +33,7 @@ Bu proje, **Büyük Dil Modellerinin (LLM)** güvenliğini test etmek ve Türkç
 
 Projenin bir sonraki adımı, eğitilen bu "Siber Muhafız"ı siber güvenlik araştırmacılarının kullanımına sunmaktır:
 
-1. **Gamification (Oyunlaştırma):** Gandalf (Lakera) tarzı, seviye bazlı bir **Prompt Injection oyunu** tasarlamak.
+1. **Oyunlaştırma:** Seviye bazlı bir **Prompt Injection labı** tasarlamak.
 2. **Web Arayüzü:** Gradio veya Streamlit kütüphaneleri kullanılarak tıklanabilir, kullanıcı dostu bir test platformu oluşturmak.
 3. **Hugging Face Dağıtımı:** Geliştirilen modelin ve arayüzün **"Hugging Face Spaces"** üzerinden dünyaya açılması.
 4. **Seviye Tasarımları:** * **Seviye 1:** Basit kandırma yöntemleri.
